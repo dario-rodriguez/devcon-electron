@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const yargs = require('yargs');
+
+try {
+  yargs.commandDir('../dist/out-tsc/src/commands')
+    .help()
+    .alias('h', 'help')
+    .demandCommand()
+    .strict(true)
+    .argv;
+} catch (e) {
+  console.log(e.message);
+}
